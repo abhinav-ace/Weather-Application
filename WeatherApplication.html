@@ -1,34 +1,24 @@
-<html>
-    
+<html>    
     <head>
         <link rel="preconnect" href="https://fonts.gstatic.com">
         <link href="https://fonts.googleapis.com/css2?family=Texturina&display=swap" rel="stylesheet">
-        <link rel="stylesheet" href="weather.css">
-    
-    </head>
-    
+        <link rel="stylesheet" href="weather.css">    
+    </head>    
 
     <body>
         <div id="error"></div>
-        <div id="container">
-        
+        <div id="container">        
             <div id="heading">
                 Weather
-            </div>
-            
-            <div id="main">
-        
+            </div>            
+            <div id="main">        
                 <div id="error" class="contents"></div>
                 <div id="image" class="contents"><img src="Images/unknown.png"</div>
                 <div id="temp" class="contents"><span id="tempvalue">-</span><span id="tempsymbol">°</span><span id="tempunit">C</span></div>
                 <div id="desc" class="contents">-</div>
-                <div id="loc" class="contents">-</div>
-                
-            </div>
-                    
-        </div>
-    
-        
+                <div id="loc" class="contents">-</div>                
+            </div>                    
+        </div>       
 
         <script>
                 
@@ -46,8 +36,7 @@
         function showPosition(position){
             
             let latitude=position.coords.latitude
-            let longitude=position.coords.longitude
-            
+            let longitude=position.coords.longitude            
             let api=`http://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=${key}`
             
             fetch(api).then(function(response){
@@ -88,17 +77,9 @@
                 
                 document.getElementById("tempvalue").textContent=Math.round((value-32)*(5/9));
                 document.getElementById("tempunit").textContent="C";
-            }
-            
-        });        
-            
+            }            
+        });          
      
-        </script>
-
-
-        
-        
-        
+        </script>  
     </body>
-
 </html>
